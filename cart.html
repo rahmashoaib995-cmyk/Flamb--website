@@ -1,0 +1,95 @@
+
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <title>Cart | Flambé</title>
+        <link rel="icon" href="data:,">
+        <meta charset="UTF-8"/>
+        <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+ 
+        <!-- Tailwind Play CDN -->
+        <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
+ 
+        <!-- Google Font -->
+        <link rel="preconnect" href="https://fonts.googleapis.com" />
+        <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@500;600&family=Poppins:wght@300;400;500&display=swap" rel="stylesheet" />
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" />
+ 
+        <style type="text/tailwindcss">
+              @custom-variant dark (&:where(.dark, .dark *));
+            @theme {
+                --font-serif: "Playfair Display", serif;
+                --font-sans: "Poppins", sans-serif;
+                --color-brand-brown: #3B2A1F;
+                --color-brand-gold: #A67C3D;
+                --color-brand-beige: #F5F0E8;
+            }
+            body {
+                font-family: var(--font-sans);
+                background-color: var(--color-brand-beige);
+            }
+        </style>
+    </head>
+    <body class="text-brand-brown bg-gray-50 dark:bg-[#241B14] dark:text-[#F0E6D8] transition-colors duration-300">
+ 
+        <!-- Header -->
+        <header class="flex flex-col sm:flex-row items-center justify-between gap-4 px-6 sm:px-10 py-4 bg-white shadow-md">
+            <a href="index.html" class="block max-w-[180px] sm:max-w-[220px]">
+                <svg width="100%" viewBox="0 0 420 160" xmlns="http://www.w3.org/2000/svg">
+                    <path d="M70 18 C58 35 58 55 70 70 C82 55 82 35 70 18Z" fill="#A67C3D"/>
+                    <text x="52" y="92" font-size="70" font-family="Playfair Display" fill="#3B2A1F" font-weight="600">F</text>
+                    <text x="120" y="85" font-size="46" font-family="Playfair Display" fill="#3B2A1F" letter-spacing="2">lambé</text>
+                    <line x1="120" y1="100" x2="365" y2="100" stroke="#A67C3D" stroke-width="1"/>
+                    <text x="122" y="122" font-size="11" font-family="Poppins" letter-spacing="4" fill="#A67C3D">PERFUME &amp; CANDLES</text>
+                </svg>
+            </a>
+ 
+            <nav id="scriptNav" class="flex gap-3 w-full sm:w-auto justify-center items-center">
+                <a href="login.html" class="px-4 py-1.5 border border-brand-gold cursor-pointer rounded hover:bg-brand-gold hover:text-white transition text-sm">
+                    Login
+                </a>
+                <a href="register.html" class="px-4 py-1.5 rounded bg-brand-brown cursor-pointer text-white hover:bg-brand-gold transition text-sm">
+                    Register
+                </a>
+                <nav id="scriptNav" class="flex gap-3 w-full sm:w-auto justify-center">
+      
+            </nav>
+        </header>
+
+        <div id="toast" class="fixed bottom-6 left-1/2 -translate-x-1/2 bg-brand-brown text-white px-5 py-3 rounded-md 
+        shadow-lg text-sm opacity-0 pointer-events-none transition-opacity duration-300 z-50">
+           </div>
+
+
+        <!--cardSection-->
+           <section class="mx-auto max-w-3xl px-6 py-10">
+            <h2 class="font-semibold font-serif text-2xl mb-6">Shopping Cart</h2>
+
+           <div id="cartContainer" class="grid grid-cols-1 md:grid-cols-2 gap-6 p-4 max-w-6xl mx-auto">
+                
+                </div>
+                <p id="emptyCartMsg" class="text-center text-gray-500 mt-8 hidden">  Your cart is empty </p>
+
+                <h3 id="totalPrice" class="text-center font-semibold font-serif text-2xl mt-10"> 
+                    Total Price: $0.00
+                    </h3>
+                    <hr class="border-brand-gold/30 mx-auto max-w-3xl">
+            </section>
+
+            <!--favouriteCenter-->
+
+            <section class="mx-auto max-w-3xl px-6 py-10">
+            <h2 class="group text-2xl font-serif font-semibold text-center mb-6 inline-block relative left-1/2 -translate-x-1/2">
+    Favorite Items
+
+    <span class="block w-full h-0.5 bg-brand-gold mt-1 mx-auto transition-all duration-300 group-hover:scale-x-300"></span>
+      </h2>
+           <div id="wishlistContainer" class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols3 gap-6 mt-8"></div>
+
+           <p id="emptyWishlistMsg" class="text-gray-500 mt-8 text-center hidden">No favorite items yet.</p>
+                </section>
+ 
+        <script src="script.js"></script>
+ 
+    </body>
+</html>

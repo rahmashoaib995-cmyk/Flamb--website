@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <title>Login | Flambé</title>
+        <meta charset="UTF-8"/>
+        <meta name="viewport" content="width-device-width , intial-scale=0.1"/>
+
+          <!-- Tailwind Play CDN -->
+  <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
+ 
+  <!-- Google Font -->
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@500;600&family=Poppins:wght@300;400;500&display=swap" rel="stylesheet" />
+
+  <style type="text/tailwindcss">
+    @theme {
+      --font-serif: "Playfair Display", serif;
+      --font-sans: "Poppins", sans-serif;
+      --color-brand-brown: #3B2A1F;
+      --color-brand-gold: #A67C3D;
+      --color-brand-beige: #F5F0E8;
+    }
+    body {
+      font-family: var(--font-sans);
+      background-color: var(--color-brand-beige);
+    }
+  </style>
+    </head>
+    <body class="text-brand-brown bg-gray-50">
+ 
+  <header class="flex flex-col sm:flex-row items-center justify-between gap-4 px-6 sm:px-10 py-4 bg-white shadow-md">
+    <a href="index.html" class="block max-w-[180px] sm:max-w-[220px]">
+      <svg width="100%" height="auto" viewBox="0 0 420 160" xmlns="http://www.w3.org/2000/svg">
+        <path d="M70 18 C58 35 58 55 70 70 C82 55 82 35 70 18Z" fill="#A67C3D"/>
+        <text x="52" y="92" font-size="70" font-family="Playfair Display" fill="#3B2A1F" font-weight="600">F</text>
+        <text x="120" y="85" font-size="46" font-family="Playfair Display" fill="#3B2A1F" letter-spacing="2">lambé</text>
+        <line x1="120" y1="100" x2="365" y2="100" stroke="#A67C3D" stroke-width="1"/>
+        <text x="122" y="122" font-size="11" font-family="Poppins" letter-spacing="4" fill="#A67C3D">PERFUME &amp; CANDLES</text>
+      </svg>
+    </a>
+
+    <nav class="flex gap-3 w-full sm:w-auto justify-center">
+      <a href="index.html" class="px-4 py-1.5 border border-brand-gold cursor-pointer rounded hover:bg-brand-gold hover:text-white transition text-sm hidden">
+        Login
+      </a>
+      <a href="index.html"  class="px-4 py-1.5 rounded bg-brand-brown cursor-pointer text-white hover:bg-brand-gold transition text-sm hidden">
+        Register
+      </a>
+    </nav>
+  </header>
+
+        <!--loginForm-->
+        <section class="flex items-center justify-center px-4 py-16">
+            <div class="w-full max-w-2xl bg-white shadow-md shadow-yellow-900 border-1 border-brand-gold/30 rounded p-8">
+                <h2 class="text-2xl font-serif font-semibold text-center mb-6">Welcome Back</h2>
+
+                <form id="loginForm">
+                    <div class="mb-6">
+                            <label for="email" class="block text-sm mb-2">Email</label>
+                            <input id="email"
+                            type="email"
+                            placeholder="Enter email"
+                            required
+                            class="w-full border-1 border-gray-300 rounded text-sm px-3 py-1 outline-none focus:ring-1 focus:ring-brand-gold
+                               focus:shadow-md transition">
+                            </div>
+                            <div class="mb-4">
+                            <label for="password" class="block text-sm mb-2">Password</label>
+                            <input id="password"
+                            type="password"
+                            placeholder="Enter password"
+                            required
+                            class="w-full border-1 border-gray-300 rounded text-sm px-3 py-1 outline-none focus:ring-1 focus:ring-brand-gold
+                               focus:shadow-md transition">
+                            </div>
+
+                            <div class="flex items-center gap-2 mb-4">
+                                <input type="checkbox" id="rememberMe" class="w-4 h-4 accent-brand-gold">
+                                <label for="rememberMe" class="text-sm">Remember Me</label>
+                                </div>
+                                <button id="loginBtn"
+                                 type="submit"
+                            class=" block px-3 py-1 rounded text-white bg-brand-brown cursor-pointer hover:bg-brand-gold transition mb-4 focus:ring-1 focus:ring-brand-brown transition focus:shadow-md"> 
+                            Login
+                            </button>
+                            <p class="text-sm  inline">Don't have an account?</p>
+                            <a href="register.html" class="text-brand-gold hover:underline transition text-sm">Register</a>
+                    </form>
+                    <script src="login.js"></script>
+                </div>
+            </section>

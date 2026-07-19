@@ -1,0 +1,274 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <title>Flambé | Perfume &amp; Candles</title>
+        <link rel="icon" href="data:,">
+        <meta charset="UTF-8"/>
+        <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+ 
+          <!-- Tailwind Play CDN -->
+  <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
+ 
+  <!-- Google Font -->
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@500;600&family=Poppins:wght@300;400;500&display=swap" rel="stylesheet" />
+ <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" />
+  <style type="text/tailwindcss">
+    @theme {
+      --font-serif: "Playfair Display", serif;
+      --font-sans: "Poppins", sans-serif;
+      --color-brand-brown: #3B2A1F;
+      --color-brand-gold: #A67C3D;
+      --color-brand-beige: #F5F0E8;
+    }
+    body {
+      font-family: var(--font-sans);
+      background-color: var(--color-brand-beige);
+    }
+  </style>
+    </head>
+   <body class="text-brand-brown bg-gray-50">
+ 
+  <header class="flex flex-col sm:flex-row items-center justify-between gap-4 px-6 sm:px-10 py-4 bg-white shadow-md">
+    <a href="index.html" class="block max-w-[180px] sm:max-w-[220px]">
+      <svg width="100%" viewBox="0 0 420 160" xmlns="http://www.w3.org/2000/svg">
+        <path d="M70 18 C58 35 58 55 70 70 C82 55 82 35 70 18Z" fill="#A67C3D"/>
+        <text x="52" y="92" font-size="70" font-family="Playfair Display" fill="#3B2A1F" font-weight="600">F</text>
+        <text x="120" y="85" font-size="46" font-family="Playfair Display" fill="#3B2A1F" letter-spacing="2">lambé</text>
+        <line x1="120" y1="100" x2="365" y2="100" stroke="#A67C3D" stroke-width="1"/>
+        <text x="122" y="122" font-size="11" font-family="Poppins" letter-spacing="4" fill="#A67C3D">PERFUME &amp; CANDLES</text>
+      </svg>
+    </a>
+ 
+    <nav id="scriptNav" class="flex gap-3 w-full sm:w-auto justify-center">
+      
+      <a href="login.html" class="px-4 py-1.5 border border-brand-gold cursor-pointer rounded hover:bg-brand-gold hover:text-white transition text-sm">
+        Login
+      </a>
+      <a href="register.html" class="px-4 py-1.5 rounded bg-brand-brown cursor-pointer text-white hover:bg-brand-gold transition text-sm">
+        Register
+      </a>
+    </nav>
+  </header>
+ 
+  <section class="flex flex-col sm:flex-row items-center justify-center gap-3 px-6 sm:px-10 py-6 max-w-4xl mx-auto">
+    <select id="searchType" class="w-full sm:w-auto border text-sm border-gray-300 rounded bg-white px-3 py-2 text-gray-500 outline-none focus:ring-1 focus:ring-brand-gold focus:border-brand-gold transition">
+      <option value="name">Search by product name</option>
+      <option value="category">Search by category</option>
+    </select>
+    
+    <input id="searchInput"
+      type="text"
+      placeholder="Search..."
+      class="w-full sm:flex-1 border border-gray-300 rounded text-sm px-3 py-2 outline-none focus:ring-1 focus:ring-brand-gold focus:border-brand-gold transition">
+ 
+    <button id="searchBtn" class="w-full sm:w-auto border bg-brand-brown text-white rounded px-6 py-2 cursor-pointer hover:bg-brand-gold outline-none focus:ring-1 focus:ring-brand-gold focus:border-brand-brown transition text-sm">
+      Search
+    </button>
+  </section>
+
+  <div id="toast" class="fixed bottom-6 left-1/2 -translate-x-1/2 bg-brand-brown text-white px-5 py-3 rounded-md 
+        shadow-lg text-sm opacity-0 pointer-events-none transition-opacity duration-300 z-50">
+           </div>
+           
+ 
+  <!--products cards-->
+  <div id="container" class="max-w-5xl mx-auto grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 p-6">
+ 
+      <!--card1-->
+      <div class="product bg-white border-1 border-brand-gold rounded-md shadow-md overflow-hidden transform transition-all duration-300 hover:border-2 hover:scale-[1.02] hover:shadow-2xl hover:shadow-yellow-900"
+        data-id ="1"
+        data-name ="Narciso Ambrée"
+        data-price ="120"
+        data-image ="candeles/pexels-absin-547911446-29982967.jpg">
+          <img src="candeles/pexels-absin-547911446-29982967.jpg" alt="Narciso Ambrée" class="w-full h-64 object-cover transform transition-transform duration-500 hover:scale-105">
+          <div class="p-4 text-center">
+              <h3 class="font-semibold text-md text-brown-500">Narciso Ambrée</h3>
+              <p class="mt-1 text-brown-300">Price: $120</p>
+              <p class=" category text-brown-100 mt-3">Category: Perfumes</p>
+          </div>
+ 
+          <div class="flex items-center justify-center gap-4 pb-4">
+           <button class="wishlist-btn text-md cursor-pointer"> 
+            <i class="fa-regular fa-heart"></i>
+             </button>
+            <button class=" add-cart-btn bg-[#4A3324] text-white px-3 py-1.5 rounded cursor-pointer hover:bg-brand-brown">
+                  Add to Cart
+             </button>
+            </div>
+      </div>
+       <!--card2-->
+      <div class="product bg-white border-1 border-brand-gold rounded-md overflow-hidden shadow-md transform transition-all duration-300 hover:border-2 hover:shadow-yellow-900 hover:shadow-2xl hover:scale-[1.02]"
+        data-id ="2"
+        data-name ="Chanel N°5"
+        data-price ="165"
+        data-image ="candeles/pexels-laurachouette-21008924.jpg">
+          <img src="candeles/pexels-laurachouette-21008924.jpg" alt="Chanel N°5" class="w-full h-64 object-cover transform transition-transform duration-500 hover:scale-105">
+          <div class="text-center p-4">
+              <h3 class="font-semibold text-md text-brown-500">Chanel N°5</h3>
+              <p class="text-brown-300 mt-1">Price: $165</p>
+              <p class=" category text-brown-100 mt-3">Category: Perfumes</p>
+          </div>
+          <div class="flex items-center justify-center gap-4 pb-4">
+           <button class="wishlist-btn text-md cursor-pointer"> 
+            <i class="fa-regular fa-heart"></i>
+             </button>
+              <button class=" add-cart-btn bg-[#4A3324] text-white px-3 py-1.5 rounded cursor-pointer hover:bg-brand-brown">
+                  Add to Cart
+                  </button>
+              </div>
+      </div> 
+      <!--card3-->
+      <div class="product bg-white border-1 border-brand-gold rounded-md overflow-hidden shadow-md transform transition-all duration-300 hover:border-2 hover:shadow-yellow-900 hover:shadow-2xl hover:scale-[1.02]"
+        data-id ="3"
+        data-name ="Marc Jacobs"
+        data-price ="135"
+        data-image ="candeles/pexels-absin-547911446-19004226.jpg">
+          <img src="candeles/pexels-absin-547911446-19004226.jpg" alt="Marc Jacobs" class="w-full h-64 object-cover transform transition-transform duration-500 hover:scale-105">
+          <div class="text-center p-4">
+              <h3 class="font-semibold text-md text-brown-500">Marc Jacobs</h3>
+              <p class="text-brown-300 mt-1">Price: $135</p>
+              <p class=" category text-brown-100 mt-3">Category: Perfumes</p>
+          </div>
+          <div class="flex items-center justify-center gap-4 pb-4">
+           <button class="wishlist-btn text-md cursor-pointer"> 
+            <i class="fa-regular fa-heart"></i>
+             </button>
+              <button class=" add-cart-btn bg-[#4A3324] text-white px-3 py-1.5 rounded cursor-pointer hover:bg-brand-brown">
+                  Add to Cart
+                  </button>
+              </div>
+      </div> 
+      <!--card4-->
+       <div class="product bg-white border-1 border-brand-gold rounded-md overflow-hidden shadow-md transform transition-all duration-300 hover:border-2 hover:shadow-yellow-900 hover:shadow-2xl hover:scale-[1.02]"
+        data-id ="4"
+        data-name ="Ginger Candle"
+        data-price ="25"
+        data-image ="candeles/pexels-roman-odintsov-6798396.jpg">
+          <img src="candeles/pexels-roman-odintsov-6798396.jpg" alt="Ginger Candle" class="w-full h-64 object-cover transform transition-transform duration-500 hover:scale-105">
+          <div class="text-center p-4">
+              <h3 class="font-semibold text-md text-brown-500">Ginger Candle</h3>
+              <p class="text-brown-300 mt-1">Price: $25</p>
+              <p class=" category text-brown-100 mt-3">Category: Candles</p>
+          </div>
+          <div class="flex items-center justify-center gap-4 pb-4">
+           <button class="wishlist-btn text-md cursor-pointer"> 
+            <i class="fa-regular fa-heart"></i>
+             </button>
+              <button class=" add-cart-btn bg-[#4A3324] text-white px-3 py-1.5 rounded cursor-pointer hover:bg-brand-brown">
+                  Add to Cart
+                  </button>
+              </div>
+      </div> 
+      <!--card5-->
+      <div class="product bg-white border-1 border-brand-gold rounded-md overflow-hidden shadow-md transform transition-all duration-300 hover:border-2 hover:shadow-yellow-900 hover:shadow-2xl hover:scale-[1.02]"
+        data-id ="5"
+        data-name ="Citrus Candle"
+        data-price ="30"
+        data-image ="candeles/pexels-biferyal-50615412-7649762.jpg">
+          <img src="candeles/pexels-biferyal-50615412-7649762.jpg" alt="Citrus Candle" class="w-full h-64 object-cover transform transition-transform duration-500 hover:scale-105">
+          <div class="text-center p-4">
+              <h3 class="font-semibold text-md text-brown-500">Citrus Candle</h3>
+              <p class="text-brown-300 mt-1">Price: $30</p>
+              <p class=" category text-brown-100 mt-3">Category: Candles</p>
+          </div>
+          <div class="flex items-center justify-center gap-4 pb-4">
+           <button class="wishlist-btn text-md cursor-pointer"> 
+            <i class="fa-regular fa-heart"></i>
+             </button>
+              <button class=" add-cart-btn bg-[#4A3324] text-white px-3 py-1.5 rounded cursor-pointer hover:bg-brand-brown">
+                  Add to Cart
+                  </button>
+              </div>
+      </div> 
+      <!--card6-->
+      <div class="product bg-white border-1 border-brand-gold rounded-md overflow-hidden shadow-md transform transition-all duration-300 hover:border-2 hover:shadow-yellow-900 hover:shadow-2xl hover:scale-[1.02]"
+        data-id ="6"
+        data-name ="Eucalyptus Candle"
+        data-price ="28"
+        data-image ="candeles/pexels-roman-odintsov-6798410.jpg">
+          <img src="candeles/pexels-roman-odintsov-6798410.jpg" alt="Eucalyptus Candle" class="w-full h-64 object-cover transform transition-transform duration-500 hover:scale-105">
+          <div class="text-center p-4">
+              <h3 class="font-semibold text-md text-brown-500">Eucalyptus Candle</h3>
+              <p class="text-brown-300 mt-1">Price: $28</p>
+              <p class=" category text-brown-100 mt-3">Category: Candles</p>
+          </div>
+          <div class="flex items-center justify-center gap-4 pb-4">
+           <button class="wishlist-btn text-md cursor-pointer"> 
+            <i class="fa-regular fa-heart"></i>
+             </button>
+              <button class=" add-cart-btn bg-[#4A3324] text-white px-3 py-1.5 rounded cursor-pointer hover:bg-brand-brown">
+                  Add to Cart
+                  </button>
+              </div>
+      </div> 
+      <!--card7-->
+      <div class="product bg-white border-1 border-brand-gold rounded-md overflow-hidden shadow-md transform transition-all duration-300 hover:border-2 hover:shadow-yellow-900 hover:shadow-2xl hover:scale-[1.02]"
+        data-id ="7"
+        data-name ="Savour & Aura Gift Set"
+        data-price ="95"
+        data-image ="candeles/pexels-best-frargrnce-and-flavours-2152558474-34144825.jpg">
+          <img src="candeles/pexels-best-frargrnce-and-flavours-2152558474-34144825.jpg" alt="Savour & Aura Gift Set" class="w-full h-64 object-cover transform transition-transform duration-500 hover:scale-105">
+          <div class="text-center p-4">
+              <h3 class="font-semibold text-md text-brown-500">Savour & Aura Gift Set</h3>
+              <p class="text-brown-300 mt-1">Price: $95</p>
+              <p class=" category text-brown-100 mt-3">Category: Gift Sets</p>
+          </div>
+          <div class="flex items-center justify-center gap-4 pb-4">
+           <button class="wishlist-btn text-md cursor-pointer"> 
+            <i class="fa-regular fa-heart"></i>
+             </button>
+              <button class=" add-cart-btn bg-[#4A3324] text-white px-3 py-1.5 rounded cursor-pointer hover:bg-brand-brown">
+                  Add to Cart
+                  </button>
+              </div>
+      </div> 
+      <!--card8-->
+      <div class="product bg-white border-1 border-brand-gold rounded-md overflow-hidden shadow-md transform transition-all duration-300 hover:border-2 hover:shadow-yellow-900 hover:shadow-2xl hover:scale-[1.02]"
+        data-id ="8"
+        data-name ="Ahloki Luxury Gift Box"
+        data-price ="85"
+        data-image ="candeles/pexels-ahloki-1473645-8467583.jpg">
+          <img src="candeles/pexels-ahloki-1473645-8467583.jpg" alt="Ahloki Luxury Gift Box" class="w-full h-64 object-cover transform transition-transform duration-500 hover:scale-105">
+          <div class="text-center p-4">
+              <h3 class="font-semibold text-md text-brown-500">Ahloki Luxury Gift Box</h3>
+              <p class="text-brown-300 mt-1">Price: $85</p>
+              <p class=" category text-brown-100 mt-3">Category: Gift Sets</p>
+          </div>
+           <div class="flex items-center justify-center gap-4 pb-4">
+           <button class="wishlist-btn text-md cursor-pointer"> 
+            <i class="fa-regular fa-heart"></i>
+             </button>
+              <button class=" add-cart-btn bg-[#4A3324] text-white px-3 py-1.5 rounded cursor-pointer hover:bg-brand-brown">
+                  Add to Cart
+                  </button>
+              </div>
+      </div> 
+      <!--card9-->
+      <div class="product bg-white border-1 border-brand-gold rounded-md overflow-hidden shadow-md transform transition-all duration-300 hover:border-2 hover:shadow-yellow-900 hover:shadow-2xl hover:scale-[1.02]"
+        data-id ="9"
+        data-name ="Aroma Therapy Gift Set"
+        data-price ="50"
+        data-image ="candeles/pexels-maahidphotos-6831672.jpg">
+          <img src="candeles/pexels-maahidphotos-6831672.jpg" alt="Aroma Therapy Gift Set" class="w-full h-64 object-cover transform transition-transform duration-500 hover:scale-105">
+          <div class="text-center p-4">
+              <h3 class="font-semibold text-md text-brown-500">Aroma Therapy Gift Set</h3>
+              <p class="text-brown-300 mt-1">Price: $50</p>
+              <p class=" category text-brown-100 mt-3">Category: Gift Sets</p>
+          </div>
+          <div class="flex items-center justify-center gap-4 pb-4">
+           <button class="wishlist-btn text-md cursor-pointer"> 
+            <i class="fa-regular fa-heart"></i>
+             </button>
+              <button class=" add-cart-btn bg-[#4A3324] text-white px-3 py-1.5 rounded cursor-pointer hover:bg-brand-brown">
+                  Add to Cart
+                  </button>
+              </div>
+      </div> 
+ 
+  </div>
+ 
+  <script src="script.js"></script>
+ 
+</body>
+</html>
